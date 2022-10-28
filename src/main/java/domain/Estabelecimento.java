@@ -1,5 +1,6 @@
 package domain;
 
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,7 +15,7 @@ public class Estabelecimento implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-//    @GenericGenerator(name = "uuid", strategy = "uuid");
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     private UUID id ;
 
     private String nome;

@@ -1,10 +1,14 @@
 package domain;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "clientes")
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 

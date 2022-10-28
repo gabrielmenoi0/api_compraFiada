@@ -1,12 +1,12 @@
 package domain;
 
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "dependentes")
 public class Dependentes implements Serializable {
     private static final long serialVersionUID = 1L;
 

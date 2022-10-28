@@ -1,7 +1,5 @@
 package domain;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -12,6 +10,14 @@ import java.util.UUID;
 public class CompraFiada implements Serializable {
 
     private static final long serialVersionId = 1l;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "estabelecimento_id")
+    private Estabelecimento estabelecimento;
 
     @Override
     public boolean equals(Object o) {

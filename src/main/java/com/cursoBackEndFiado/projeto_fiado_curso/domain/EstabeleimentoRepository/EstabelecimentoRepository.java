@@ -1,7 +1,7 @@
-package EstabeleimentoRepository;
-import domain.Estabelecimento;
+package com.cursoBackEndFiado.projeto_fiado_curso.domain.EstabeleimentoRepository;
+import com.cursoBackEndFiado.projeto_fiado_curso.domain.Estabelecimento;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+
 import java.util.UUID;
 
 

@@ -1,4 +1,4 @@
-package domain;
+package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package domain;
+package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;

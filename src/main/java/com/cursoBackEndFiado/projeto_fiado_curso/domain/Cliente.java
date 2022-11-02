@@ -1,30 +1,28 @@
-package domain;
+package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "dependentes")
-public class Dependentes implements Serializable {
+@Table(name = "clientes")
+public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Dependentes that = (Dependentes) o;
-        return cliente.equals(that.cliente) && id.equals(that.id) && nome.equals(that.nome) && domumento.equals(that.domumento) && telefone.equals(that.telefone) && rua.equals(that.rua) && numero.equals(that.numero);
+        Cliente cliente = (Cliente) o;
+        return id.equals(cliente.id) && nome.equals(cliente.nome) && domumento.equals(cliente.domumento) && telefone.equals(cliente.telefone) && rua.equals(cliente.rua) && numero.equals(cliente.numero);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cliente, id, nome, domumento, telefone, rua, numero);
+        return Objects.hash(id, nome, domumento, telefone, rua, numero);
     }
 
     @Id
@@ -83,7 +81,7 @@ public class Dependentes implements Serializable {
         this.numero = numero;
     }
 
-    public Dependentes(){
+    public Cliente(){
 
     }
 }

@@ -1,11 +1,8 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.controller;
 
 import com.cursoBackEndFiado.projeto_fiado_curso.domain.Cliente;
-import com.cursoBackEndFiado.projeto_fiado_curso.domain.Estabelecimento;
 import com.cursoBackEndFiado.projeto_fiado_curso.dto.ClienteDTO;
-import com.cursoBackEndFiado.projeto_fiado_curso.dto.EstabelecimentoDTO;
 import com.cursoBackEndFiado.projeto_fiado_curso.services.ClienteServices;
-import com.cursoBackEndFiado.projeto_fiado_curso.services.EstabelecimentoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -14,20 +14,8 @@ public class Dependentes implements Serializable {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Dependentes that = (Dependentes) o;
-        return cliente.equals(that.cliente) && id.equals(that.id) && nome.equals(that.nome) && domumento.equals(that.domumento) && telefone.equals(that.telefone) && rua.equals(that.rua) && numero.equals(that.numero);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cliente, id, nome, domumento, telefone, rua, numero);
-    }
-
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
     private String domumento;
@@ -85,5 +73,17 @@ public class Dependentes implements Serializable {
 
     public Dependentes(){
 
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dependentes that = (Dependentes) o;
+        return cliente.equals(that.cliente) && id.equals(that.id) && nome.equals(that.nome) && domumento.equals(that.domumento) && telefone.equals(that.telefone) && rua.equals(that.rua) && numero.equals(that.numero);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cliente, id, nome, domumento, telefone, rua, numero);
     }
 }

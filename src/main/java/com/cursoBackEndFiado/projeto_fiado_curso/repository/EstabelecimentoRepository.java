@@ -1,4 +1,4 @@
-package com.cursoBackEndFiado.projeto_fiado_curso.domain.EstabeleimentoRepository;
+package com.cursoBackEndFiado.projeto_fiado_curso.repository;
 import com.cursoBackEndFiado.projeto_fiado_curso.domain.Estabelecimento;
 import org.springframework.data.jpa.repository.JpaRepository;
 

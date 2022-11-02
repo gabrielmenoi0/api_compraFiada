@@ -1,5 +1,6 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
+import com.cursoBackEndFiado.projeto_fiado_curso.dto.EstabelecimentoDTO;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,6 +21,22 @@ public class Estabelecimento implements Serializable {
 
     private String nome;
 
+    private String telefone;
+    private String documento;
+
+    public Estabelecimento() {
+    }
+
+    public Estabelecimento(String nome, String phone, String document) {
+        this.nome = nome;
+        this.telefone = phone;
+        this.documento = document;
+    }
+    public Estabelecimento(EstabelecimentoDTO estabelecimentoDTO) {
+        this.nome = estabelecimentoDTO.getNome();
+        this.telefone = estabelecimentoDTO.getTelefone();
+        this.documento = estabelecimentoDTO.getDocumento();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,19 +49,6 @@ public class Estabelecimento implements Serializable {
     public int hashCode() {
         return Objects.hash(id, nome, telefone, documento);
     }
-
-    private String telefone;
-    private String documento;
-
-    public Estabelecimento() {
-    }
-
-    public Estabelecimento(String nome, String phone, String document) {
-        this.nome = nome;
-        this.telefone = phone;
-        this.documento = document;
-    }
-
     public UUID getId() {
         return id;
     }

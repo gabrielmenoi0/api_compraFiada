@@ -1,8 +1,8 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.cursoBackEndFiado.projeto_fiado_curso.dto.ClienteDTO;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
@@ -26,6 +26,7 @@ public class Cliente implements Serializable {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
     private String domumento;
@@ -83,5 +84,12 @@ public class Cliente implements Serializable {
 
     public Cliente(){
 
+    }
+    public void ClienteDTO(ClienteDTO clienteDTO) {
+        this.nome = clienteDTO.getNome();
+        this.domumento = clienteDTO.getDomumento();
+        this.telefone = clienteDTO.getTelefone();
+        this.rua = clienteDTO.getRua();
+        this.numero = clienteDTO.getNumero();
     }
 }

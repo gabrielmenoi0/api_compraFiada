@@ -19,20 +19,8 @@ public class CompraFiada implements Serializable {
     @JoinColumn(name = "estabelecimento_id")
     private Estabelecimento estabelecimento;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CompraFiada that = (CompraFiada) o;
-        return valor == that.valor && ID.equals(that.ID) && nome.equals(that.nome) && observacao.equals(that.observacao) && data.equals(that.data);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(ID, nome, observacao, valor, data);
-    }
-
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID ID;
     private String nome;
     private String observacao;
@@ -81,5 +69,18 @@ public class CompraFiada implements Serializable {
 
     public CompraFiada(){
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CompraFiada that = (CompraFiada) o;
+        return valor == that.valor && ID.equals(that.ID) && nome.equals(that.nome) && observacao.equals(that.observacao) && data.equals(that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID, nome, observacao, valor, data);
     }
 }

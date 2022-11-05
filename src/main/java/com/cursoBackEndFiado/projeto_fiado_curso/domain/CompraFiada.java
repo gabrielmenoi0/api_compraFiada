@@ -1,4 +1,6 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.domain;
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -20,6 +22,8 @@ public class CompraFiada implements Serializable {
     private Estabelecimento estabelecimento;
 
     @Id
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @org.hibernate.annotations.Type(type="uuid-char")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID ID;
     private String nome;

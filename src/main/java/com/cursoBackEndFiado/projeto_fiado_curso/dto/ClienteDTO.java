@@ -4,7 +4,7 @@ import com.cursoBackEndFiado.projeto_fiado_curso.domain.Cliente;
 
 public class ClienteDTO {
     private String nome;
-    private String domumento;
+    private String documento;
     private String telefone;
     private String rua;
     private String numero;
@@ -14,7 +14,7 @@ public class ClienteDTO {
 
     public ClienteDTO(String nome, String domumento, String telefone, String rua, String numero) {
         this.nome = nome;
-        this.domumento = domumento;
+        this.documento = domumento;
         this.telefone = telefone;
         this.rua = rua;
         this.numero = numero;
@@ -29,12 +29,12 @@ public class ClienteDTO {
         this.nome = nome;
     }
 
-    public String getDomumento() {
-        return domumento;
+    public String getDocumento() {
+        return documento;
     }
 
     public void setDomumento(String domumento) {
-        this.domumento = domumento;
+        this.documento = domumento;
     }
 
     public String getTelefone() {

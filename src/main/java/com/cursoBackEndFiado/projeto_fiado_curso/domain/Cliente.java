@@ -1,6 +1,7 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
 import com.cursoBackEndFiado.projeto_fiado_curso.dto.ClienteDTO;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,19 +18,21 @@ public class Cliente implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
-        return id.equals(cliente.id) && nome.equals(cliente.nome) && domumento.equals(cliente.domumento) && telefone.equals(cliente.telefone) && rua.equals(cliente.rua) && numero.equals(cliente.numero);
+        return id.equals(cliente.id) && nome.equals(cliente.nome) && documento.equals(cliente.documento) && telefone.equals(cliente.telefone) && rua.equals(cliente.rua) && numero.equals(cliente.numero);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, domumento, telefone, rua, numero);
+        return Objects.hash(id, nome, documento, telefone, rua, numero);
     }
 
     @Id
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @org.hibernate.annotations.Type(type="uuid-char")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
-    private String domumento;
+    private String documento;
     private String telefone;
     private String rua;
     private String numero;
@@ -51,11 +54,11 @@ public class Cliente implements Serializable {
     }
 
     public String getDomumento() {
-        return domumento;
+        return documento;
     }
 
-    public void setDomumento(String domumento) {
-        this.domumento = domumento;
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
     public String getTelefone() {
@@ -87,7 +90,7 @@ public class Cliente implements Serializable {
     }
     public void ClienteDTO(ClienteDTO clienteDTO) {
         this.nome = clienteDTO.getNome();
-        this.domumento = clienteDTO.getDomumento();
+        this.documento = clienteDTO.getDocumento();
         this.telefone = clienteDTO.getTelefone();
         this.rua = clienteDTO.getRua();
         this.numero = clienteDTO.getNumero();

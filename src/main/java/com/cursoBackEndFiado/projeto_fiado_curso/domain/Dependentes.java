@@ -1,5 +1,7 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -15,6 +17,8 @@ public class Dependentes implements Serializable {
     private Cliente cliente;
 
     @Id
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @org.hibernate.annotations.Type(type="uuid-char")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
@@ -69,6 +73,13 @@ public class Dependentes implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Dependentes(){

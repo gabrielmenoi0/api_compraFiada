@@ -17,6 +17,7 @@ public class Estabelecimento implements Serializable {
 
     @Id
     @GenericGenerator(name = "uuid", strategy = "uuid")
+    @org.hibernate.annotations.Type(type="uuid-char")
     private UUID id ;
 
     private String nome;

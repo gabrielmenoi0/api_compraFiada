@@ -1,5 +1,6 @@
 package com.cursoBackEndFiado.projeto_fiado_curso.services;
 
+import com.cursoBackEndFiado.projeto_fiado_curso.domain.Cliente;
 import com.cursoBackEndFiado.projeto_fiado_curso.domain.Estabelecimento;
 import com.cursoBackEndFiado.projeto_fiado_curso.dto.EstabelecimentoDTO;
 import com.cursoBackEndFiado.projeto_fiado_curso.repository.EstabelecimentoRepository;
@@ -21,5 +22,7 @@ public class EstabelecimentoServices {
     public List<Estabelecimento> findAll(){
         return  estabelecimentoRepository.findAll();
     }
-
+    public Optional<Estabelecimento> findById(UUID idCliente) {
+        return estabelecimentoRepository.findById(idCliente);
+    }
 }

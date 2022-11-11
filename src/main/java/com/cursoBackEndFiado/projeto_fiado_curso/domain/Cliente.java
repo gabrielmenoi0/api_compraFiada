@@ -92,7 +92,7 @@ public class Cliente implements Serializable {
         this.nome = clienteDTO.getNome();
         this.documento = clienteDTO.getDocumento();
         this.telefone = clienteDTO.getTelefone();
-        this.rua = clienteDTO.getRua();
+            this.rua = clienteDTO.getRua();
         this.numero = clienteDTO.getNumero();
     }
 }
